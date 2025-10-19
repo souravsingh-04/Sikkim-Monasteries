@@ -1,17 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-
-// Fix Leaflet default marker icon issue in React (especially after deploying)
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconUrl: "/images/marker-icon.png",
-  shadowUrl: "/images/marker-shadow.png",
-});
-
 
 
 import {
@@ -109,6 +98,19 @@ const MONASTERIES = [
     highlights: ["Losoong festival", "Prayer wheels", "City overlook"]
   },
 ];
+
+// Custom icons for monasteries
+const rumtekIcon = L.icon({
+  iconUrl: "/images/marker-icon.png",
+  iconSize: [30, 45],
+  
+});
+
+const tashidingIcon = L.icon({
+  iconUrl: "/images/marker-icon.png",
+  iconSize: [30, 45],
+  
+});
 
 const DISTRICTS = ["All", "Gangtok", "Gyalshing", "Namchi", "Mangan"];
 const SECTS = ["All", "Nyingma", "Kagyu", "Sakya", "Gelug"];
@@ -445,12 +447,13 @@ export default function SikkimMonasteriesHome() {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[27.3389, 88.6065]}>
-              <Popup>Rumtek Monastery</Popup>
-            </Marker>
-            <Marker position={[27.3176, 88.2695]}>
-              <Popup>Tashiding Monastery</Popup>
-            </Marker>
+             {/* Rumtek Monastery Marker */}
+        <Marker position={[27.315, 88.611]} icon={rumtekIcon}>
+        </Marker>
+
+        {/* Tashiding Monastery Marker */}
+        <Marker position={[27.279, 88.322]} icon={tashidingIcon}>
+        </Marker>
           </MapContainer>
         </CardContent>
       </Card>
