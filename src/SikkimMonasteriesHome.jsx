@@ -38,7 +38,7 @@ const MONASTERIES = [
     founded: "18th c., rebuilt 1960s",
     sect: "Kagyu",
     image:
-      "https://images.unsplash.com/photo-1558981852-426c6c22a3d9?q=80&w=1600&auto=format&fit=crop",
+      "/images/istockphoto-516034386-612x612.jpg",
     short:
       "Seat-in-exile of the Karmapa lineage; intricate murals, golden stupa and monastic college.",
     highlights: ["Kora path", "Assembly hall", "Black Hat dance (Tsechu)"],
@@ -52,7 +52,7 @@ const MONASTERIES = [
     founded: "1705",
     sect: "Nyingma",
     image:
-      "https://images.unsplash.com/photo-1558981033-78cfe0bb4f6a?q=80&w=1600&auto=format&fit=crop",
+      "/images/Pemayangtse-Monastery.jpg",
     short:
       "One of Sikkim's oldest; houses the famed wooden reliquary 'Zangdok Palri'.",
     highlights: ["Zangdok Palri model", "Museum", "Himalayan vistas"],
@@ -66,7 +66,7 @@ const MONASTERIES = [
     founded: "1717",
     sect: "Nyingma",
     image:
-      "https://images.unsplash.com/photo-1589308078050-46e65b725657?q=80&w=1600&auto=format&fit=crop",
+      "/images/Tashiding-Monastery-OG-Photo.jpg",
     short:
       "Sacred site between Rathong and Rangeet rivers; famed for 'Bumchu' holy water festival.",
     highlights: ["Bumchu festival", "Chortens", "Panoramic trail"]
@@ -79,7 +79,7 @@ const MONASTERIES = [
     founded: "1740",
     sect: "Kagyu",
     image:
-      "https://images.unsplash.com/photo-1541417904950-b855846fe074?q=80&w=1600&auto=format&fit=crop",
+      "public/a2687d08-86b6-4bf3-9d77-bbcb2abe50a9.jpg",
     short:
       "Known for vibrant Cham dances and 18th‑century murals.",
     highlights: ["Cham dances", "Monastic library", "Countryside views"]
@@ -92,7 +92,7 @@ const MONASTERIES = [
     founded: "1909",
     sect: "Nyingma",
     image:
-      "https://images.unsplash.com/photo-1519680775-959d51936a6e?q=80&w=1600&auto=format&fit=crop",
+      "/images.jpg",
     short:
       "Guardian monastery of Gangtok; elegant woodwork and protective deities.",
     highlights: ["Losoong festival", "Prayer wheels", "City overlook"]
@@ -129,7 +129,7 @@ export default function SikkimMonasteriesHome() {
     {/* Logo + Title */}
     <div className="flex items-center gap-3">
       <img 
-        src="public/buddhism.png" 
+        src="/images/buddhism.png" 
         alt="Buddha Logo" 
         className="h-10 w-10 rounded-full shadow-md object-cover"
       />
@@ -160,7 +160,7 @@ export default function SikkimMonasteriesHome() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div
-          className="absolute inset-0 bg-[url('public/hero-section_image.jpg')] bg-cover bg-center"
+          className="absolute inset-0 bg-[url('/images/hero-section_image.jpg')] bg-cover bg-center"
           aria-hidden
         />
         <div className="absolute inset-0 bg-black/40" aria-hidden />
@@ -179,7 +179,7 @@ export default function SikkimMonasteriesHome() {
             cultural conservation.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-[2fr,1fr,1fr]">
-            <div className="flex items-center gap-2 bg-white/90 rounded-2xl p-2">
+            <div className="flex items-center gap-2 bg-black/40 rounded-2xl p-2">
               <Search className="ml-2" aria-hidden />
               <Input
                 className="border-0 bg-transparent focus-visible:ring-0"
@@ -189,7 +189,7 @@ export default function SikkimMonasteriesHome() {
               />
             </div>
             <Select value={district} onValueChange={setDistrict}>
-              <SelectTrigger className="rounded-2xl bg-white/90">
+              <SelectTrigger className="rounded-2xl bg-black/40">
                 <SelectValue placeholder="District" />
               </SelectTrigger>
               <SelectContent>
@@ -201,7 +201,7 @@ export default function SikkimMonasteriesHome() {
               </SelectContent>
             </Select>
             <Select value={sect} onValueChange={setSect}>
-              <SelectTrigger className="rounded-2xl bg-white/90">
+              <SelectTrigger className="rounded-2xl bg-black/0">
                 <SelectValue placeholder="Sect" />
               </SelectTrigger>
               <SelectContent>
@@ -483,7 +483,7 @@ export default function SikkimMonasteriesHome() {
       <div className="relative min-h-[260px]">
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20 z-10" />
         <div
-          className="absolute inset-0 bg-[url('public/newsletter.jpg')] bg-cover bg-center"
+          className="absolute inset-0 bg-[url('/images/newsletter.jpg')] bg-cover bg-center"
           aria-hidden
         />
       </div>

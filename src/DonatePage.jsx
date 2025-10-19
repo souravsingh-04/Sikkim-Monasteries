@@ -178,7 +178,7 @@ export default function App() {
           <div className="flex flex-col items-center">
             <p className="text-center font-medium text-lg text-slate-700 dark:text-slate-300 mb-4">Scan to pay with UPI</p>
             {/* Using a placeholder for the QR code */}
-            <img src="public/QR_paytem.jpeg" alt="UPI QR Code" className="w-48 h-48 rounded-lg shadow-md mb-4" />
+            <img src="/images/QR_paytem.jpeg" alt="UPI QR Code" className="w-48 h-48 rounded-lg shadow-md mb-4" />
             <p className="text-sm text-slate-500 dark:text-slate-400">
               Open your UPI app (Paytm, GPay, PhonePe, etc.) and scan the QR code to complete the payment.
             </p>
