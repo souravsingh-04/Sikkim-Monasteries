@@ -1,6 +1,17 @@
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
+// Fix Leaflet default marker icon issue in React (especially after deploying)
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconUrl: "/images/marker-icon.png",
+  shadowUrl: "/images/marker-shadow.png",
+});
+
 
 
 import {
@@ -38,7 +49,7 @@ const MONASTERIES = [
     founded: "18th c., rebuilt 1960s",
     sect: "Kagyu",
     image:
-      "/images/istockphoto-516034386-612x612.jpg",
+      "/images/Rumtek_Monastery.jpeg",
     short:
       "Seat-in-exile of the Karmapa lineage; intricate murals, golden stupa and monastic college.",
     highlights: ["Kora path", "Assembly hall", "Black Hat dance (Tsechu)"],
@@ -66,7 +77,7 @@ const MONASTERIES = [
     founded: "1717",
     sect: "Nyingma",
     image:
-      "/images/Tashiding-Monastery-OG-Photo.jpg",
+      "/images/Tashiding-Monastery.jpg",
     short:
       "Sacred site between Rathong and Rangeet rivers; famed for 'Bumchu' holy water festival.",
     highlights: ["Bumchu festival", "Chortens", "Panoramic trail"]
@@ -79,7 +90,7 @@ const MONASTERIES = [
     founded: "1740",
     sect: "Kagyu",
     image:
-      "public/a2687d08-86b6-4bf3-9d77-bbcb2abe50a9.jpg",
+      "/images/Phodong Monastery.jpg",
     short:
       "Known for vibrant Cham dances and 18th‑century murals.",
     highlights: ["Cham dances", "Monastic library", "Countryside views"]
@@ -92,7 +103,7 @@ const MONASTERIES = [
     founded: "1909",
     sect: "Nyingma",
     image:
-      "/images.jpg",
+      "/images/Enchey Monastery.jpg",
     short:
       "Guardian monastery of Gangtok; elegant woodwork and protective deities.",
     highlights: ["Losoong festival", "Prayer wheels", "City overlook"]
